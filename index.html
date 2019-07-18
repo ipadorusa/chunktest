@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>Datepicker</title>
+    <style type="text/css">
+        .datepicker {position:absolute;z-index:9999;border:1px solid #ccc;background:#fff;-webkit-user-select:none;user-select:none}
+        .datepicker:after{display:table;table-layout:fixed;clear:both;content:"";}
+        .datepicker .dp_header {position:relative}
+        .datepicker .dp_status {display:block;position:relative;height:24px;font-size:12px;line-height:24px;text-align:center}
+        .datepicker .dp_btn  {display:block;position:absolute;top:0;padding:0;width:24px;height:24px;border:0;border-radius:0;background:transparent;color:transparent;font-size:0;line-height:0;cursor:pointer}
+        .datepicker .dp_btn:disabled {opacity:0.2;cursor:default}
+        .datepicker .dp_btn.prev_y {left:0px}
+        .datepicker .dp_btn.prev_m {left:24px}
+        .datepicker .dp_btn.next_m {right:24px}
+        .datepicker .dp_btn.next_y {right:0px}
+        .datepicker .dp_btn:before,
+        .datepicker .dp_btn:after {display:inline-block;line-height:24px;font-size:11px;color:#000;font-family:serif;letter-spacing:-3px;}
+        .datepicker .dp_btn.prev_m:after {content:"<"}
+        .datepicker .dp_btn.next_m:after {content:">"}
+        .datepicker .dp_btn.prev_y:after {content:"<<"}
+        .datepicker .dp_btn.next_y:after {content:">>"}
+
+        .datepicker .dp_calendar {display:inline-block;box-sizing:border-box;}
+        .datepicker .dp_h {font-size:12px;height:24px;line-height:24px;text-align:center}
+        .datepicker .dp_t table {width:100%;border-collapse:collapse;table-layout:fixed}
+        .datepicker .dp_t thead th,
+        .datepicker .dp_t tbody td {padding:0;font-size:12px;font-weight:normal;text-align:center}
+        .datepicker .dp_t thead th {height:23px;border-bottom:1px solid #ededed;color:#ababab;}
+        .datepicker .dp_t tbody td {height:24px;color:#666;cursor:pointer}
+        .datepicker .dp_t tbody td.sunday {color:#f99}
+        .datepicker .dp_t tbody td.saturday {color:#99f}
+        .datepicker .dp_t tbody td.today {background:#eef}
+        .datepicker .dp_t tbody td.dp_selected {background:#ccc}
+        .datepicker .dp_t tbody td.dp_selected.dp_from {border-radius:12px 0 0 12px}
+        .datepicker .dp_t tbody td.dp_selected.dp_to {border-radius:0 12px 12px 0}
+        .datepicker .dp_t tbody td.dp_selected.dp_from.dp_to {border-radius:12px}
+        .datepicker .dp_t tbody td.dp_selection {background:#efefef}
+        .datepicker .dp_t tbody td.dp_selection_hover {background:#efefef}
+        .datepicker .dp_t tbody td.dp_selected.dp_selection_hover {border-radius:0}
+        .datepicker .dp_t tbody td.dp_hover {background:#ccc}
+        .datepicker .dp_t tbody td.dp_selected.dp_hover,
+        .datepicker .dp_t tbody td.dp_from.dp_to.dp_hover {border-radius:0}
+        .datepicker .dp_t tbody td.dp_disabled,
+        .datepicker .dp_t tbody td.dp_restricted {cursor:default;opacity:0.3}
+
+
+
+        hr {margin:20px 0;border:#eee 1px solid;}
+
+
+        .accordionMenu {margin-bottom:20px;padding:20px;border:1px solid #aaa}
+        .accordionMenu li {position:relative;margin-bottom:10px;height:30px;border:1px solid #aaa;line-height:30px;background:#eee}
+        .accordionMenu div {padding-left:10px}
+        .accordionMenu .content {display:none;height:100px;background:#ddd}
+        .accordionMenu li.user_open,
+        .accordionMenu li.open {height:auto}
+        .accordionMenu li.user_open .content,
+        .accordionMenu li.open .content {display:block}
+        .accordionMenu li button {position:absolute;top:0;right:0;width:30px;height:30px;border:none;font-size:0;background:#ccc}
+        .accordionMenu li button:before {display:block;margin:5px auto 0;width:0;height:0;border:4px solid transparent;border-top-color:#000;content:""}
+        .accordionMenu li.open button:before,
+        .accordionMenu li.user_open button:before {margin:0 auto 6px;transform:rotate(180deg)}
+        #accordion2 li .content {height:400px}
+        #accordion4 li button {width:auto;font-size:12px;background:none}
+        #accordion4 li button:before {float:right;margin-left:4px}
+    </style>
+</head>
+<body>
+<h2>Datepicker</h2>
+<p>인풋만</p>
+<p>
+    <input type="text" class="cls_input1" style="width:400px" readonly id="idforLabel" />
+    <label for="idforLabel" style="border:1px solid #666">버튼 대신 레이블</label>
+</p>
+
+<ul id="accordion0" class="accordionMenu acc">
+    <li class="item">
+        <div>1</div>
+        <div class="content">contents</div>
+        <button class="btn">click</button>
+    </li>
+    <li class="item">
+        <div>2</div>
+        <div class="content">contents</div>
+        <button class="btn">click</button>
+    </li>
+    <li class="item">
+        <div>3</div>
+        <div class="content">contents</div>
+        <button class="btn">click</button>
+    </li>
+    <li class="item">
+        <div>4</div>
+        <div class="content">contents</div>
+        <button class="btn">click</button>
+    </li>
+</ul>
+<script type="text/javascript" src="./dist/app.js"></script>
+
+</body>
+</html>
