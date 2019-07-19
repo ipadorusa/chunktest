@@ -8,7 +8,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         chunkFilename: '[name].chunk.js?v=[chunkhash]',
-        publicPath: "/test/dist/",
+        publicPath: "/dynamic/dist/",
         path: path.resolve(__dirname, 'dist')
         //libraryTarget : "var",
         //library : 'ui'
